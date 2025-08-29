@@ -36,7 +36,7 @@
 ---
 ## ⚙️ OPCIONAL: Ejecutar frontend y backend por separado
 
-Si prefieres trabajar los proyectos por separado, puedes levantar manualmente el backend (Django) y el frontend (Vue.js) de la siguiente manera:
+Luego de clonar el repositorio, si prefieres trabajar los proyectos por separado, puedes levantar manualmente el backend (Django) y el frontend (Vue.js) de la siguiente manera:
 
 ### Backend (Django)
 
@@ -48,7 +48,7 @@ Si prefieres trabajar los proyectos por separado, puedes levantar manualmente el
 2. Entra a la carpeta del backend:
 
    ```bash
-   python -m venv venv
+   python -m venv venv  # py -m venv venv
    source venv/bin/activate  # En Windows: venv\Scripts\activate
 
 3. Entra a la carpeta del backend:
