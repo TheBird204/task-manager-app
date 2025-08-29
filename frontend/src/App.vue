@@ -1,6 +1,40 @@
+<script setup>
+import { ref, watch, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
+
+const showNavbar = ref(false);
+const hideOnRoutes = ['/', '/register'];
+
+const checkAuth = () => {
+  const token = localStorage.getItem('access_token');
+  const isLoggedIn = !!token;
+  showNavbar.value = isLoggedIn && !hideOnRoutes.includes(route.path);
+};
+
+// Esperamos a que el router esté listo antes de calcular el estado inicial
+onMounted(async () => {
+  await router.isReady(); // <-- esto asegura que route.path es el correcto
+  checkAuth();
+});
+
+// Re-evaluamos si cambia la ruta
+watch(() => route.path, () => {
+  checkAuth();
+});
+
+const logout = () => {
+  localStorage.removeItem('access_token');
+  localStorage.removeItem('refresh_token');
+  checkAuth(); // <-- vuelve a evaluar el estado del navbar
+  router.push('/');
+};
+</script>
+
 <template>
   <div>
-    <!-- Navbar solo si el usuario está logueado y no está en login o register -->
     <nav v-if="showNavbar">
       <router-link to="/tasks">Tareas</router-link>
       <button @click="logout">Cerrar sesión</button>
@@ -10,29 +44,6 @@
   </div>
 </template>
 
-<script setup>
-import { useRoute, useRouter } from 'vue-router';
-import { computed } from 'vue';
-
-const route = useRoute();
-const router = useRouter();
-
-const isLoggedIn = computed(() => {
-  return !!localStorage.getItem('access_token');
-});
-
-const hideOnRoutes = ['/', '/register'];
-
-const showNavbar = computed(() => {
-  return isLoggedIn.value && !hideOnRoutes.includes(route.path);
-});
-
-const logout = () => {
-  localStorage.removeItem('access_token');
-  localStorage.removeItem('refresh_token');
-  router.push('/');
-};
-</script>
 
 <style scoped>
 nav {
