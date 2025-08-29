@@ -40,6 +40,11 @@ Luego de clonar el repositorio, si prefieres trabajar los proyectos por separado
 
 ### Backend (Django)
 
+NOTA: en algunos casos Windows no puedes ejecutar ciertos comandos si es tu caso usa el siguiente comando:
+
+   ```bash
+   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
 1. Entra a la carpeta del backend:
 
    ```bash
