@@ -1,4 +1,4 @@
-# Proyecto con Docker
+# Proyecto con Docker (Recomendado)
 
 ## Requisitos
 
@@ -84,12 +84,6 @@ Si prefieres trabajar los proyectos por separado, puedes levantar manualmente el
    # o
    yarn dev 
 
-4. Accede a la aplicación en:
-
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-
-5. Inicia el servidor de desarrollo:
+4. Inicia el servidor de desarrollo:
 
    http://localhost:5173
