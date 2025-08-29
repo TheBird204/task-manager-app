@@ -75,3 +75,10 @@ docker-compose.override.yml
 
 *.swp
 *.swo
+
+# Ignorar archivos de migraciones
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Ignorar archivos compilados de Python
+**/migrations/*.pyc
