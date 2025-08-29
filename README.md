@@ -24,11 +24,10 @@
 
 3. **Ejecutar el proyecto con Docker**
 
-Para construir y correr el contenedor Docker, ejecuta el siguiente comando en la raíz del proyecto:
+   Para construir y correr el contenedor Docker, ejecuta el siguiente comando en la raíz del proyecto:
 
-```bash
-docker-compose up --build
-
+   ```bash
+   docker-compose up --build
 
 ---
 ## ⚙️ OPCIONAL: Ejecutar frontend y backend por separado
