@@ -29,6 +29,10 @@
    ```bash
    docker-compose up --build
 
+4. **Inicia el servidor de desarrollo:**
+
+   http://localhost:5173
+
 ---
 ## ⚙️ OPCIONAL: Ejecutar frontend y backend por separado
 
