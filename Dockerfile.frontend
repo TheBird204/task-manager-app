@@ -1,0 +1,19 @@
+# Dockerfile.frontend
+
+FROM node:20
+
+WORKDIR /app
+
+# Copiar solo los archivos de instalación primero
+COPY package*.json ./
+
+# Instala dependencias limpias dentro del contenedor
+RUN npm install --legacy-peer-deps
+
+# Ahora copia el resto del proyecto
+COPY . .
+
+EXPOSE 5173
+
+# Inicia Vite
+CMD ["npx", "vite", "npm", "run", "dev", "--", "--host"]
